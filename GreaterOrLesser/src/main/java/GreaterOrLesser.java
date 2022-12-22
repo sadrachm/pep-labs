@@ -11,7 +11,7 @@ public class GreaterOrLesser {
      */
     public String decide(int a, int b){
         if (a == b) {
-            return "equal";
+            return "Equal";
         }
         return a<b ? "Lesser" : "Greater";
     }
