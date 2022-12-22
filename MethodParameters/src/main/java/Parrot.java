@@ -15,11 +15,6 @@ public class Parrot {
      * @return text.
      */
     public String copy(String text){
-        Scanner inp = new Scanner(System.in);
-        String ans = inp.nextLine();
-        inp.close();
-
-
-        return ans;
+        return text;
     }
 }
