@@ -1,4 +1,7 @@
 
+import java.util.Scanner;
+
+
 public class Parrot {
     /**
      * This method should return whatever String was passed into it by whatever invoked it (in this case, the test),
@@ -12,6 +15,11 @@ public class Parrot {
      * @return text.
      */
     public String copy(String text){
-        return "return text please!";
+        Scanner inp = new Scanner(System.in);
+        String ans = inp.nextLine();
+        inp.close();
+
+
+        return ans;
     }
 }
