@@ -1,0 +1,1 @@
+INSERT INTO song (title, artist) VALUES ('Strawberry Fields Forever', 'The Beatles');
