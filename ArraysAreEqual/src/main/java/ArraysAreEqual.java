@@ -23,6 +23,7 @@ public class ArraysAreEqual {
             if (el != b[count]) {
                 return false;
             }
+            count++;
         }
         return true;
     }
