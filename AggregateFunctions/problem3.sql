@@ -1,0 +1,1 @@
+SELECT MIN(salary) FROM employee WHERE last_name = 'Smith'
