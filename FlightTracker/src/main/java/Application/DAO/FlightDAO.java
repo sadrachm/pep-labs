@@ -39,13 +39,10 @@ public class FlightDAO {
             // System.out.println(preparedStatement.toString());
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
-                System.out.println(rs.getInt("flight_id") +  rs.getString("departure_city")+
-                rs.getString("arrival_city"));
                 Flight flight = new Flight(rs.getInt("flight_id"), rs.getString("departure_city"),
                         rs.getString("arrival_city"));
                 flights.add(flight);
             }
-            System.out.println("----------------");
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
@@ -112,7 +109,7 @@ public class FlightDAO {
         try {
             //Write SQL logic here. When inserting, you only need to define the departure_city and arrival_city
             //values (two columns total!)
-            String sql = "INSERT INTO flight (departure_city, arrival_city) VALUES ('?','?');" ;
+            String sql = "INSERT INTO flight (departure_city, arrival_city) VALUES (?,?);" ;
             PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             //write preparedStatement's setString and setInt methods here.
@@ -153,7 +150,6 @@ public class FlightDAO {
         Connection connection = ConnectionUtil.getConnection();
         try {
             //Write SQL logic here
-            //          update TableName set ColumnName1=?, ColumnName2=? where ColumnName3 = ?;
             String sql = "UPDATE flight SET departure_city=?, arrival_city=? WHERE flight_id= ? ;";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
@@ -161,7 +157,6 @@ public class FlightDAO {
             preparedStatement.setString(1, flight.departure_city);
             preparedStatement.setString(2, flight.arrival_city);
             preparedStatement.setInt(3, id);
-            System.out.println(preparedStatement.toString());
 
 
             preparedStatement.executeUpdate();
