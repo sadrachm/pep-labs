@@ -168,7 +168,7 @@ public class FlightAppTest {
         allFlightsReturned.add(new Flight(801, "tampa", "dallas"));
         allFlightsReturned.add(new Flight(802, "tampa", "morgantown"));
         allFlightsReturned.add(new Flight(803, "tampa", "reston"));
-        allFlightsReturned.add(new Flight(804, "tampa", "dallas"));
+        allFlightsReturned.add(new Flight(804, "tampa", "dallas"));        
         Mockito.when(mockFlightDAO.getAllFlights()).thenReturn(allFlightsReturned);
         Assert.assertEquals(allFlightsReturned, flightService.getAllFlights());
     }
