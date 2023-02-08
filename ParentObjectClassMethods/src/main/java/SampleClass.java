@@ -56,6 +56,16 @@ public class SampleClass {
     public boolean b;
 
     //    implement a custom .equals(SampleClass other){} method here.
+    @Override
+    public boolean equals(Object other) {
+        if (!(other instanceof SampleClass)) return false;
+        SampleClass other2 = (SampleClass) other;
+        return (other2.a == this.a) && (other2.b == this.b) ?  true :  false;
+    }
+    @Override
+    public String toString() {
+        return String.valueOf(a) + String.valueOf(b);
+    }
 
 
     //    implement a custom .toString(){} method here.
