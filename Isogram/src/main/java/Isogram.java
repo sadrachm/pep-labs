@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.HashSet;
 
 public class Isogram {
     /**
@@ -13,6 +15,10 @@ public class Isogram {
      * @return true if str is an isogram, false otherwise.
      */
     public boolean isIsogram(String str){
-        return false;
+        HashSet<Character> set = new HashSet<Character>();
+        for (int i = 0; i < str.length(); i++) {
+            set.add(str.charAt(i));            
+        }
+        return set.size() == str.length() ? true : false;
     }
 }
